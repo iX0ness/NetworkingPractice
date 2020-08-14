@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
     var environment: AppEnvironment  { .development }
     var session: URLSession { .init(configuration: .default) }
 
@@ -26,7 +25,7 @@ class ViewController: UIViewController {
         let deletePost = RequestsStorage.deletePost(by: 2)
 
         let networkingClient = NetworkingClient(session: session, environment: environment)
-        let _ = networkingClient.send(deletePost) { result in
+        let _ = networkingClient.send(getPosts) { result in
             switch result {
             case .success(let posts):
                 print(posts)
@@ -51,6 +50,5 @@ class ViewController: UIViewController {
             body: "Holidays in Finland"
         )
     }
-
 
 }
