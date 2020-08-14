@@ -53,10 +53,8 @@ struct NetworkingClient: APIClient {
 
             do {
 
-                let responseString = String(data: data, encoding: .utf8)!
-                print(responseString)
-
                 let decodedObject = try JSONDecoder().decode(T.Response.self, from: data)
+                debugInfo(items: decodedObject)
                 completion(.success(decodedObject))
                 
             } catch {

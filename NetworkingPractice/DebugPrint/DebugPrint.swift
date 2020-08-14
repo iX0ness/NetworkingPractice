@@ -17,3 +17,8 @@ func debugSuccess(items: Any) {
     print("✅ SUCCESS ✅")
     debugPrint(items)
 }
+
+func debugInfo(items: Any) {
+    print("ℹ️ INFO ℹ️")
+    debugPrint(items)
+}

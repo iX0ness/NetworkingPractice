@@ -52,10 +52,10 @@ extension APIClient {
         var body: Data?
 
         do {
+            
             body = try JSONEncoder().encode(request.body)
-
-            let responseString = String(data: body!, encoding: .utf8)!
-            print(responseString)
+            debugInfo(items: body)
+            
         } catch {
             debugFailure(items: error)
         }
